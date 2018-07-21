@@ -2,7 +2,7 @@ const Mock = require('mockjs')
 const Random = Mock.Random;
 const loginUser = {
   username:'zs',
-  password:'1234',
+  password:'123',
   type:'admin'
 }
 Mock.mock("http://localhost:8080/api/admin/login",'post',function (options) {
@@ -16,6 +16,7 @@ Mock.mock("http://localhost:8080/api/admin/login",'post',function (options) {
 })
 
 const resultData = function() {
+  //动态生成用户数据
   let result = Mock.mock({
     'users|10': [{
       // id编号
